@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Controller</title>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<style>
+		button {
+			width: 200px;
+			height: 200px;
+			font-size: 100px;
+		}
+		div.left {
+			display: inline-block;
+		}
+
+		div.center {
+			display: inline-block;
+		}
+
+		div.right {
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<center>
+		<div class="left">
+			<button onclick="move('left')">Left</button>
+		</div>
+		<div class="center">
+			<button onclick="move('up')">Up</button><br />
+			<button onclick="move('down')">Down</button>
+		</div>
+		<div class="right">
+			<button onclick="move('right')">Right</button>
+		</div>
+	</center>
+	<script>
+function move(direction) {
+	$.ajax({
+		url: "http://" + window.location.host + "/" + direction,
+	})
+}
+	</script>
+</body>
+</html>
